@@ -1,3 +1,3 @@
-# Reseptitietokanta
+# Elokuvatietokanta
 
-Käyttäjät voivat tallentaa reseptejä tietokantaan. Käyttäjillä on myös mahdollisuus arvostella muiden käyttäjien tekemiä reseptejä. 
+Tietokannasta löytyy tietoja elokuvista ja niiden tekijöistä. Käyttäjät voivat tehdä arvosteluja elokuvista.
