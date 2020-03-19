@@ -6,8 +6,6 @@ Elokuvan tekijöistä, kuten ohjaajista, käsikirjoittajista jne. voidaan hakea 
 Käyttäjät voivat tehdä arvosteluja elokuvista. Arvostelut näytetään elokuvissa. Tämän avulla voidaan elokuvat järjestää.
 Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijöistä.
 
-Tässä vaiheessa en rajaa kantaa tarkemmin.
-
 [HEROKU](https://tsoha-movierating-demo.herokuapp.com/)
 
 ## Dokumentaatio
