@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>MovieRatingDb</title>
+  </head>
+
+  <body>
+      <ul>
+	<li><a href="{{ url_for('movies_index') }}">List movies</a></li>
+	<li><a href="{{ url_for('movies_form') }}">Add a movie</a></li>
+      </ul>
+    {% block body %}
+      <p>
+        Content.
+      </p>
+    {% endblock %}
+  </body>
+</html>

@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+  
+{% block body %}
+<form method="POST" action="{{ url_for('movies_create') }}">
+  <input type="text" name="name"/>
+  <input type="text" name="duration"/>
+  <input type="text" name="budget"/>
+  <input type="submit" value="Add a new movie"/>
+</form>
+{% endblock %}
