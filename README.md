@@ -6,7 +6,11 @@ Elokuvan tekijöistä, kuten ohjaajista, käsikirjoittajista jne. voidaan hakea 
 Käyttäjät voivat tehdä arvosteluja elokuvista. Arvostelut näytetään elokuvissa. Tämän avulla voidaan elokuvat järjestää.
 Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijöistä.
 
-[HEROKU](https://tsoha-movierating-demo.herokuapp.com/)
+## Herokun testiversio
+[Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion. 
+Kirjautuessa voit käyttää seuraavia tunnuksia:
+username - moro
+password - jape
 
 ## Dokumentaatio
 [Tietokantakaavion hahmotelma](https://github.com/veliblesku/elokuvatietokanta/blob/master/dokumentaatio/elokuvatdb.png)
