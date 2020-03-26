@@ -13,5 +13,5 @@ Kirjautuessa voit käyttää seuraavia tunnuksia:
 * password - jape
 
 ## Dokumentaatio
-[Tietokantakaavion hahmotelma](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/img/elokuvatdb.png)
-[Käyttötapaukset](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/userstories.md)
+* [Tietokantakaavion hahmotelma](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/img/elokuvatdb.png)
+* [Käyttötapaukset](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/userstories.md)
