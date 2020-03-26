@@ -13,6 +13,8 @@ class Movie(db.Model):
 
     account_id = db.Column(db.Integer, db.ForeignKey('account.id'), nullable=False)
 
+    ratings = db.relationship("Rating", backref='movie', lazy=True)
+
     def __init__(self, name, duration, budget):
         self.name = name
         self.duration = duration

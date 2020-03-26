@@ -14,6 +14,7 @@ class User(db.Model):
     password = db.Column(db.String(144), nullable=False)
 
     movies = db.relationship("Movie", backref='account', lazy=True)
+    ratings = db.relationship("Rating", backref='account', lazy=True)
 
 
     def __init__(self, name, username, password):

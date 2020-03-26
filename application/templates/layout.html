@@ -8,10 +8,11 @@
   <body>
       {% if current_user.is_authenticated %}
         <p>
-          Kirjautunut nimellä {{ current_user.name }}. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
+          {{ current_user.name }} is logged in. <a href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
         </p>
       {% else %}
-        <a href="{{ url_for('auth_login') }}">Kirjaudu</a>
+        <a href="{{ url_for('auth_login') }}">Log in</a>
+        <a href="{{url_for('auth_register')}}"> Register</a>
       {% endif %}
       <ul>
         <li><a href="{{ url_for('movies_index') }}">List movies</a></li>

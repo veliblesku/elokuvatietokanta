@@ -15,6 +15,7 @@ def movies_index():
 def movies_form():
     return render_template("movies/new.html", form = MovieForm())
 
+
 @app.route("/movies/", methods=["POST"])
 @login_required
 def movies_create():
