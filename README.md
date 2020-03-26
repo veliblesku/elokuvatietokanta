@@ -8,9 +8,9 @@ Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijö
 
 ## Herokun testiversio
 [Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion.  
-Kirjautuessa voit käyttää seuraavia tunnuksia:
-username - moro
-password - jape
+Kirjautuessa voit käyttää seuraavia tunnuksia:  
+* username - moro
+* password - jape
 
 ## Dokumentaatio
 [Tietokantakaavion hahmotelma](https://github.com/veliblesku/elokuvatietokanta/blob/master/dokumentaatio/elokuvatdb.png)
