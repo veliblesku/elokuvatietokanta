@@ -7,7 +7,7 @@ Käyttäjät voivat tehdä arvosteluja elokuvista. Arvostelut näytetään eloku
 Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijöistä.
 
 ## Herokun testiversio
-[Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion. 
+[Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion.  
 Kirjautuessa voit käyttää seuraavia tunnuksia:
 username - moro
 password - jape
