@@ -8,9 +8,7 @@ Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijö
 
 ## Herokun testiversio
 [Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion.  
-Rekisteröidy   
-Tai  
-Käytä kirjautuessa seuraavia tunnuksia:  
+Rekisteröidy sovellukseen tai kirjaudu seuraavilla tunnuksilla:  
 * username - moro
 * password - jape
 
