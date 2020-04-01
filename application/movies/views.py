@@ -10,6 +10,12 @@ from application.movies.forms import MovieForm
 def movies_index():
     return render_template("movies/list.html", movies = Movie.query.all())
 
+@app.route("/movies/<movie_id>/", methods=["GET"])
+def movies_get_movie(movie_id):
+    m = Movie.query.get(movie_id)
+    return render_template("movies/movie.html",movie = m, form = MovieForm(), rating=Movie.find_movie_avg(1, movie_id))
+
+
 @app.route("/movies/new/")
 @login_required
 def movies_form():

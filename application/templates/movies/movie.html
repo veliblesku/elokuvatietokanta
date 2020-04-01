@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block body %}
+  <table>
+    <tr>
+      <th>Movie</th>
+      <th>Duration</th>
+      <th>Budget</th>
+      <th>Rating</th>
+    </tr>
+    <tr>
+      <td>{{ movie.name }}</td>
+      <td>{{ movie.duration }}minutes</td>
+      <td>{{ movie.budget }}$</td>
+      <td>{{rating}}</td>
+      {% if current_user.is_authenticated %}
+      <td>
+      	<form method="POST" action="{{ url_for('movie_set_rating', movie_id=movie.id) }}">
+            <select id="rating" name="rating">
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+            </select>
+              <input type="submit" value="add rating">
+        </form>
+      </td>
+      {% endif %}
+    </tr>
+  </table>
+{% endblock %}

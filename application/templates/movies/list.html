@@ -4,14 +4,10 @@
   <table>
     <tr>
       <th>Movie</th>
-      <th>Duration</th>
-      <th>Budget</th>
     </tr>
     {% for movie in movies %}
     <tr>
-      <td>{{ movie.name }}</td>
-      <td>{{ movie.duration }}minutes</td>
-      <td>{{ movie.budget }}$$</td>
+      <td><a href="{{ url_for('movies_get_movie', movie_id=movie.id) }}">{{ movie.name }}</a></td>
     </tr>
     {% endfor %}
   </table>

@@ -1,4 +1,6 @@
 from application import db
+from sqlalchemy.sql import text
+
 
 
 class Movie(db.Model):
@@ -19,3 +21,22 @@ class Movie(db.Model):
         self.name = name
         self.duration = duration
         self.budget = budget
+
+
+
+    
+    def find_movie_avg(account_id, movie_id):
+        exists = text("SELECT EXISTS"
+                        "(SELECT * FROM rating WHERE account_id=:a_id AND movie_id=:m_id)").params(a_id=account_id, m_id=movie_id);
+
+        stmt = text("SELECT avg(rating) FROM rating"
+                " WHERE movie_id=:id").params(id=movie_id);
+
+        res = db.engine.execute(stmt)
+        response = []
+        print("moro")
+        print(res)
+        for row in res:
+            response.append(row[0])
+        print(response[0])
+        return response[0]
