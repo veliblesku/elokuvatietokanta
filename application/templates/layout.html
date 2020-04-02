@@ -20,6 +20,11 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ url_for('movies_form') }}">Add a movie</a>
           </li>
+          {%if current_user.is_authenticated%}
+          <li>
+             <a class="nav-link" href="{{ url_for('ratings_get_user_ratings') }}">My rated movies</a>
+          </li>
+          {%endif%}
         </ul>
         <div class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav mr-auto">

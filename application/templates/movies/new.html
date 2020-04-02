@@ -10,11 +10,11 @@
             {{ form.name }}
         </td>
         <td>
-        <ul>
-            {% for error in form.name.errors %}
-            <li>{{ error }}</li>
-            {% endfor %}
-        </ul>
+            <ul>
+                {% for error in form.name.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
         </td>
     </tr>
     <tr>
@@ -24,6 +24,13 @@
         <td>
             {{ form.duration }}
         </td>
+        <td>
+            <ul>
+            {% for error in form.duration.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        </td>
     </tr>
     <tr>
         <td>
@@ -32,7 +39,30 @@
         <td>
             {{ form.budget }}
         </td>
+        <td>
+            <ul>
+            {% for error in form.budget.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        </td>
     </tr>
+        <tr>
+        <td>
+            {{ form.year.label }}
+        </td>
+        <td>
+            {{ form.year }}
+        </td>
+        <td>
+            <ul>
+            {% for error in form.year.errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+            </ul>
+        </td>
+    </tr>
+
     <tr>
         <td colspan="2">
         <input type="submit" value="Add a new movie"/>

@@ -6,12 +6,14 @@
       <th>Movie</th>
       <th>Duration</th>
       <th>Budget</th>
+      <th>Year</th>
       <th>Rating</th>
     </tr>
     <tr>
       <td>{{ movie.name }}</td>
       <td>{{ movie.duration }}minutes</td>
       <td>{{ movie.budget }}$</td>
+      <td>{{ movie.year }}</td>
       <td>{{rating}}</td>
       {% if current_user.is_authenticated %}
       <td>

@@ -5,6 +5,7 @@ from flask_login import login_required, current_user
 from flask import redirect, render_template, request, url_for
 from application.movies.models import Movie
 from application.movies.forms import MovieForm
+from application.ratings.models import Rating
 
 @app.route("/movies", methods=["GET"])
 def movies_index():
@@ -13,8 +14,15 @@ def movies_index():
 @app.route("/movies/<movie_id>/", methods=["GET"])
 def movies_get_movie(movie_id):
     m = Movie.query.get(movie_id)
-    return render_template("movies/movie.html",movie = m, form = MovieForm(), rating=Movie.find_movie_avg(1, movie_id))
+    r = Rating.find_movie_avg(movie_id)
+    if r == None:
+        return render_template("movies/movie.html",movie = m, form = MovieForm(), rating=r)
+    else:
+        r = round(r,2)
+        return render_template("movies/movie.html",movie = m, form = MovieForm(), rating=r)
 
+
+   
 
 @app.route("/movies/new/")
 @login_required
@@ -32,7 +40,8 @@ def movies_create():
     n = form.name.data
     d = form.duration.data
     b = form.budget.data
-    m = Movie(n, d, b)
+    y = form.year.data
+    m = Movie(n, d, b,y)
     m.account_id = current_user.id
     db.session().add(m)
     db.session().commit()
