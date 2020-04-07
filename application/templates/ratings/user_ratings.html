@@ -1,16 +1,16 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Movie</th>
-    </tr>
+  <div class="container">
+    <h2>Movie</h2>
+    <ul class="list-group">
+
     {% for rating in ratings %}
-    <tr>
-      <td>{{ rating.name }}</td>
-      <td>{{ rating.year }}</td>
-      <td>{{ rating.rating }}</td>
-    </tr>
+      <li class="list-group-item d-flex justify-content-between align-items-center">
+      {{rating.name}}, {{rating.year}}
+      <span class="badge badge-primary badge-pill">{{rating.rating}}</span>
+      </li>
     {% endfor %}
-  </table>
+    </ul>
+  </div>
 {% endblock %}
