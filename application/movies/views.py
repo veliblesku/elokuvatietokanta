@@ -7,6 +7,8 @@ from application.movies.models import Movie
 from application.movies.forms import MovieForm
 from application.ratings.models import Rating
 
+
+
 @app.route("/movies", methods=["GET"])
 def movies_index():
     return render_template("movies/list.html", movies = Movie.query.all())
