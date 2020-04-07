@@ -5,6 +5,10 @@ from application import app, db
 from application.auth.models import User
 from application.auth.forms import LoginForm, RegisterForm
 
+from flask_bootstrap import Bootstrap
+
+Bootstrap(app)
+
 @app.route("/auth/login", methods = ["GET", "POST"])
 def auth_login():
     if request.method == "GET":
