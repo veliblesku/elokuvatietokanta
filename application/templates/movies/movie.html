@@ -1,34 +1,31 @@
 {% extends "layout.html" %}
 
 {% block body %}
-  <table>
-    <tr>
-      <th>Movie</th>
-      <th>Duration</th>
-      <th>Budget</th>
-      <th>Year</th>
-      <th>Rating</th>
-    </tr>
-    <tr>
-      <td>{{ movie.name }}</td>
-      <td>{{ movie.duration }}minutes</td>
-      <td>{{ movie.budget }}$</td>
-      <td>{{ movie.year }}</td>
-      <td>{{rating}}</td>
-      {% if current_user.is_authenticated %}
-      <td>
-      	<form method="POST" action="{{ url_for('movie_set_rating', movie_id=movie.id) }}">
-            <select id="rating" name="rating">
-            <option value="1">*</option>
-            <option value="2">**</option>
-            <option value="3">***</option>
-            <option value="4">****</option>
-            <option value="5">*****</option>
-            </select>
-              <input type="submit" value="add rating">
-        </form>
-      </td>
-      {% endif %}
-    </tr>
-  </table>
+<div class="jumbotron">
+  <h1 class="display-4">{{movie.name}}</h1>
+  <p class="lead">Movie was released {{rating}}.</p>
+  <hr class="my-4">
+  <p>Release year of the movie was {{movie.year}} and boxoffice is {{movie.budget}}.</p>
+  {% if current_user.is_authenticated %}
+  <p>
+    <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#ratingBox" aria-expanded="false" aria-controls="ratingBox">
+      Rate
+    </button>
+  </p>
+  <div class="collapse" id="ratingBox">
+  <form method="POST" action="{{ url_for('movie_set_rating', movie_id=movie.id) }}">
+    <select id="rating" name="rating">
+    <option value="1">*</option>
+    <option value="2">**</option>
+    <option value="3">***</option>
+    <option value="4">****</option>
+    <option value="5">*****</option>
+    </select>
+    <input type="submit" value="add rating">
+  </form>
+</div>
+  {%endif%}
+
+  
+</div>
 {% endblock %}
