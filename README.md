@@ -13,5 +13,7 @@ Rekisteröidy sovellukseen tai kirjaudu seuraavilla tunnuksilla:
 * password - jari
 
 ## Dokumentaatio
-* [Tietokantakaavion hahmotelma](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/img/elokuvatdb.png)
+* [Tietokantakaavio](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/tietokantakaavio.md)
 * [Käyttötapaukset](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/userstories.md)
+* [Käyttöohje](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/ohje.md)
+* [Asennusohje](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/asennusohje.md)
