@@ -27,7 +27,7 @@ def roles_create():
     if not form.validate():
         return render_template("roles/new.html", form = RoleForm)
 
-    n = form.roleName.data
+    n = form.rolename.data
     r = Role(n)
     r.account_id = current_user.id
     db.session().add(r)
