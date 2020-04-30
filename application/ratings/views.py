@@ -12,8 +12,9 @@ from application.ratings.forms import MovieRatingForm
 @login_required
 def ratings_get_user_ratings():
     u = current_user
-
-    return render_template("ratings/user_ratings.html", ratings = Rating.find_movies_user_has_rated(u.id))
+    ratings_count = Rating.get_count_of_ratings_user_has_done(u.id)
+    user_ratings_average = Rating.user_ratings_average(u.id)
+    return render_template("ratings/user_ratings.html", ratings = Rating.find_movies_user_has_rated(u.id), ratings_count = ratings_count, user_ratings_average = user_ratings_average)
 
 @app.route("/movies/<movie_id>/", methods=["POST"])
 @login_required

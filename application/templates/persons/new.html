@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% from 'bootstrap/form.html' import render_field %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('persons_create') }}">
+  {{ render_field(form.name) }}
+  {{ render_field(form.dateOfBirth) }}
+  <button type="submit" class="btn btn-primary">Add a Person</button>
+</form>
+{% endblock %}

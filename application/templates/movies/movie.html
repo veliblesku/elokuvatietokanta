@@ -2,30 +2,75 @@
 
 {% block body %}
 <div class="jumbotron">
-  <h1 class="display-4">{{movie.name}}</h1>
-  <p class="lead">Movie was released {{rating}}.</p>
+
+    <div class="row">
+      <div class="col-8">
+        <h1 class="display-4">{{movie.name}}</h1>
+        <p class="lead">Movie has been rated {{rating_count}} times and the average of ratings is {{rating}}.</p>
+      </div>
+
+    </div>
+  
+
+
   <hr class="my-4">
   <p>Release year of the movie was {{movie.year}} and boxoffice is {{movie.budget}}.</p>
+  <hr class="my-4">
   {% if current_user.is_authenticated %}
-  <p>
-    <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#ratingBox" aria-expanded="false" aria-controls="ratingBox">
-      Rate
-    </button>
-  </p>
-  <div class="collapse" id="ratingBox">
-  <form method="POST" action="{{ url_for('movie_set_rating', movie_id=movie.id) }}">
-    <select id="rating" name="rating">
-    <option value="1">*</option>
-    <option value="2">**</option>
-    <option value="3">***</option>
-    <option value="4">****</option>
-    <option value="5">*****</option>
-    </select>
-    <input type="submit" value="add rating">
-  </form>
-</div>
+  
+  <div="container">
+   <div class="row">
+    <div class="col-sm">
+        <p>
+        <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse" data-target="#ratingBox" aria-expanded="false" aria-controls="ratingBox">
+          Rate
+        </button>
+        </p>
+    </div>
+    <div class="col-sm">
+        <div class="collapse" id="ratingBox">
+          <form method="POST" action="{{ url_for('movie_set_rating', movie_id=movie.id) }}">
+            <select id="rating" name="rating">
+            <option value="1">*</option>
+            <option value="2">**</option>
+            <option value="3">***</option>
+            <option value="4">****</option>
+            <option value="5">*****</option>
+            </select>
+            <input type="submit" value="add rating">
+          </form>
+        </div>
+    </div>
+    
+        <div class="col-sm">
+          <a href="{{ url_for('movie_add_credits_index', movie_id=movie.id) }}" class="btn btn-primary btn-lg" type="button">
+            Add credits
+          </a>
+        </div>
+        
+        <div class="col-sm">
+          <a href="{{ url_for('movie_update_index', movie_id=movie.id) }}" class="btn btn-primary btn-lg" type="button">
+            Edit
+          </a>
+        </div>
+  </div>
+  <hr class="my-4">
   {%endif%}
-
+  <table class="table table-striped">
+    <tbody>
+      {% for credit in credits %}
+      <tr>
+        <th scope="row">{{credit.role}}</th>
+        <td>{{credit.person}}</td>
+        <td>
+          <form method="POST" action="{{ url_for('movie_delete_credit', credit_id=credit.id,movie_id=movie.id) }}">
+              <button type="submit" class="btn btn-primary">Delete credit</button>
+          </form>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
   
 </div>
 {% endblock %}

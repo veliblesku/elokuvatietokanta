@@ -4,6 +4,9 @@
 {% block body %}
 <form method="POST" action="{{ url_for('movies_create') }}">
   {{ render_field(form.name) }}
+  {% for error in form.name.errors %}
+	  <li>{{ error }}</li>
+	{% endfor %}
   {{ render_field(form.duration) }}
   {{ render_field(form.budget) }}
   {{ render_field(form.year) }}

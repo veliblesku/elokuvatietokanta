@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% from 'bootstrap/form.html' import render_field %}
+
+{% block body %}
+<div class="container">
+
+<h1>Add credits for {{movie.name}}</h1>
+<form method="POST" action="{{ url_for('movie_add_credits', movie_id = movie.id) }}">
+    {{ render_field(form.persons)}}
+    {{ render_field(form.roles )}}
+  <button type="submit" class="btn btn-primary">Add</button>
+
+
+</form>
+</div>
+{% endblock %}

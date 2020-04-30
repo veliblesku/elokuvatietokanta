@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% from 'bootstrap/form.html' import render_field %}
+
+{% block body %}
+<form method="POST" action="{{ url_for('roles_create') }}">
+  {{ render_field(form.roleName) }}
+  <button type="submit" class="btn btn-primary">Add a Movie</button>
+</form>
+{% endblock %}

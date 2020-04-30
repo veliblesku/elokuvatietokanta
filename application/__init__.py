@@ -4,6 +4,8 @@ app = Flask(__name__)
 import os
 
 from flask_sqlalchemy import SQLAlchemy
+from flask_migrate import Migrate
+
 
 if os.environ.get("HEROKU"):
     app.config["SQLALCHEMY_DATABASE_URI"] = os.environ.get("DATABASE_URL")
@@ -12,6 +14,7 @@ else:
     app.config["SQLALCHEMY_ECHO"] = True
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
 
 from application import views
 
@@ -23,6 +26,15 @@ from application.auth import views
 
 from application.ratings import models
 from application.ratings import views
+
+from application.roles import models
+from application.roles import views
+
+from application.persons import models
+from application.persons import views
+
+from application.persons_role_in_movie import models
+from application.persons_role_in_movie import views
 
 from application.auth.models import User
 from os import urandom

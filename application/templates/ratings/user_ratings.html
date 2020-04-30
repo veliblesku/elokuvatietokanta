@@ -3,11 +3,13 @@
 {% block body %}
   <div class="container">
     <h2>Movie</h2>
+    <h5>You have rated totally {{ratings_count}} movies and the average of ratings you have done is {{user_ratings_average}}.</h5>
     <ul class="list-group">
-
     {% for rating in ratings %}
       <li class="list-group-item d-flex justify-content-between align-items-center">
-      {{rating.name}}, {{rating.year}}
+            <div  class="clickable-row" data-href="{{ url_for('movies_get_movie', movie_id=rating.id) }}">
+              {{rating.name}}, {{rating.year}}
+            </div>
       <span class="badge badge-primary badge-pill">{{rating.rating}}</span>
       </li>
     {% endfor %}

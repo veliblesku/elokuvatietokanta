@@ -44,11 +44,11 @@ class Rating(Base):
     
     @staticmethod
     def find_movies_user_has_rated(account_id):
-        stmt = text("SELECT Movie.name, Movie.year, Rating.rating FROM movie LEFT JOIN rating ON Movie.id=rating.movie_id WHERE rating.account_id =:a_id;").params(a_id=account_id);
+        stmt = text("SELECT Movie.id, Movie.name, Movie.year, Rating.rating FROM movie LEFT JOIN rating ON Movie.id=rating.movie_id WHERE rating.account_id =:a_id;").params(a_id=account_id);
         res = db.engine.execute(stmt)
         response = []
         for row in res:
-            response.append({"name":row[0], "year":row[1], "rating": row[2]})
+            response.append({"id":row[0], "name":row[1], "year":row[2], "rating": row[3]})
         print(response)
         return response
 
@@ -63,3 +63,30 @@ class Rating(Base):
         for row in res:
             response.append(row[0])
         return response
+
+    @staticmethod
+    def get_count_of_ratings_in_movie(movie_id):
+        stmt = text("SELECT COUNT(Rating.id) FROM rating WHERE movie_id=:m_id;").params(m_id=movie_id);
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append(row[0])
+        return response[0]
+
+    @staticmethod
+    def get_count_of_ratings_user_has_done(user_id):
+        stmt = text("SELECT COUNT(Rating.id) FROM rating WHERE account_id=:u_id;").params(u_id=user_id);
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append(row[0])
+        return response[0]
+
+    @staticmethod
+    def user_ratings_average(user_id):
+        stmt = text("SELECT AVG(Rating.rating) FROM rating WHERE account_id=:u_id;").params(u_id=user_id);
+        res = db.engine.execute(stmt)
+        response = []
+        for row in res:
+            response.append(row[0])
+        return response[0]

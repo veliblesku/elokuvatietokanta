@@ -18,11 +18,52 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('movies_index') }}">List movies</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMovies" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Movies
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownMovies">
+              <a class="dropdown-item" href="{{ url_for('movies_index') }}">List movies</a>
+              <a class="dropdown-item" href="{{ url_for('movies_form') }}">Add Movie in Database</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('movies_form') }}">Add a movie</a>
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownPersons" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Moviemakers
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownPersons">
+              <a class="dropdown-item" href="{{ url_for('persons_index') }}">List of moviemakers</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url_for('persons_form') }}">Add movie maker</a>    
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownRoles" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Roles in movie making
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownRoles">
+              <a class="dropdown-item" href="{{ url_for('roles_index') }}">List of roles in movie making</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url_for('roles_form') }}">Add role</a>    
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">Something else here</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCredits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Credits in movies
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdownCredits">
+              <a class="dropdown-item" href="{{ url_for('add_credits') }}">List of credits in movies?</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{ url_for('add_credits') }}">Add credits</a>    
+            </div>
           </li>
           {%if current_user.is_authenticated%}
           <li>
@@ -33,10 +74,11 @@
         <div class="form-inline mt-2 mt-md-0">
           <ul class="navbar-nav mr-auto">
             {% if current_user.is_authenticated %}
+            <span class="navbar-text">
+              {{ current_user.name }} is logged in. 
+            </span>
             <li class="nav-item">
-              <p>
-                {{ current_user.name }} is logged in. <a class="nav-link" href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
-              </p>
+                <a class="nav-link" href="{{ url_for('auth_logout') }}">Kirjaudu ulos</a>
             </li>
             {% else %}
             <li class="nav-item">
@@ -57,6 +99,9 @@
         Content.
       </p>
     {% endblock %}
+    <footer>
+      <p></p>
+    </footer>
     </main>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
