@@ -1,31 +1,41 @@
 # User Stories
 
-## Käyttäjä ...
+
+## Autentikointi
+### Käyttäjä ...
 * ... voi rekisteröityä palveluun.
 * ... voi kirjautua palveluun omilla käyttäjätunnuksillaan.
-* ... voi lisätä elokuvia tietokantaan.
-* ... voi lisätä elokuvan tekijöitä tietokantaan.
-* ... voi lisätä rooleja elokuvanteossa tietokantaan.
-* ... voi arvostella elokuvia.
 
-* ... voi listata omat arvostelunsa.
+## Elokuvat
+### Vierailija ...
 * ... voi listata elokuvat.
-* ... voi listata elokuvan tekijät.
-* ... voi listata elokuvien tekemiseen liittyvät roolit.
-
-* ... voi poistaa oman arvostelun.
+### Kirjautunut Käyttäjä ...
+* ... voi lisätä elokuvia tietokantaan.
+* ... voi muokata elokuvan tietoja.
 * ... voi poistaa elokuvan.
 
 
-* ... voi muokata elokuvan tietoja.
+## Henkilöt elokuvan teossa
+### Vierailija ...
+* ... voi listata elokuvan tekijät.
+### Kirjautunut Käyttäjä ...
+* ... voi lisätä elokuvien tekijöitä tietokantaan.
+
+
+## Henkilöiden roolit elokuvien teossa
+* ... voi listata elokuvien tekemiseen liittyvät roolit.
+### Kirjautunut Käyttäjä ...
+* ... voi lisätä rooleja elokuvanteossa tietokantaan.
+
+
+## Arvostelut
+### Kirjautunut Käyttäjä ...
+* ... voi arvostella elokuvia.
+* ... voi listata omat arvostelunsa.
 * ... voi muuttaa elokuvan arvostelua.
+* ... voi poistaa oman arvostelun.
 
 
 
 
 
-
-|Rooli|Tekeminen|Tehty|
-|-----|---------|-----|
-|Käyttäjä|lisää elokuvan|X|
-|Käyttäjä|listaa elokuvia|X|
