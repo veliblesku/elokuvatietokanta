@@ -8,7 +8,7 @@ from application.movies.models import Movie
 
 class PersonsRoleInMovieForm(FlaskForm):
     movies = QuerySelectField(u'Movie', query_factory=Movie.get_movie_list, get_label='name')
-    roles = QuerySelectField(u'Role', query_factory=Role.get_role_list, get_label='roleName')
+    roles = QuerySelectField(u'Role', query_factory=Role.get_role_list, get_label='rolename')
     persons = QuerySelectField(u'Person', query_factory=Person.get_person_list, get_label='name')
     
     class Meta:
@@ -17,7 +17,7 @@ class PersonsRoleInMovieForm(FlaskForm):
     
 class PersonsRoleInThisMovieForm(FlaskForm):
     movies = QuerySelectField(u'Movie', query_factory=Movie.get_movie_list, get_label='name')
-    roles = QuerySelectField(u'Role', query_factory=Role.get_role_list, get_label='roleName')
+    roles = QuerySelectField(u'Role', query_factory=Role.get_role_list, get_label='rolename')
     persons = QuerySelectField(u'Person', query_factory=Person.get_person_list, get_label='name')
     
     class Meta:
