@@ -20,5 +20,10 @@ source venv/bin/activate
 Asenna projektin riippuvuudet:
 ````
 pip install -r requirements.txt
+````
 
-
+Tämän jälkeen aja:
+`````
+python app.py
+`````
+Sovellus käynnistyy oletusarvoisesti portissa 5000 ja löydät lokaalin testiympäristön osoitteesta http://localhost:5000/ .
