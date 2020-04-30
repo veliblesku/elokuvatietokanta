@@ -1,3 +1,4 @@
+# CREATE TABLE -lauseet
 ```
 CREATE TABLE person (
 	id INTEGER NOT NULL, 
@@ -19,6 +20,7 @@ CREATE TABLE account (
 	PRIMARY KEY (id)
 );
 ```
+```
 CREATE TABLE movie (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -31,6 +33,8 @@ CREATE TABLE movie (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(account_id) REFERENCES account (id)
 );
+```
+```
 CREATE TABLE role (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -40,6 +44,8 @@ CREATE TABLE role (
 	PRIMARY KEY (id), 
 	FOREIGN KEY(account_id) REFERENCES account (id)
 );
+```
+```
 CREATE TABLE rating (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -51,6 +57,8 @@ CREATE TABLE rating (
 	FOREIGN KEY(account_id) REFERENCES account (id), 
 	FOREIGN KEY(movie_id) REFERENCES movie (id)
 );
+```
+```
 CREATE TABLE roles_in_movies (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -66,3 +74,4 @@ CREATE TABLE roles_in_movies (
 	FOREIGN KEY(role_id) REFERENCES role (id), 
 	FOREIGN KEY(person_id) REFERENCES person (id)
 );
+```
