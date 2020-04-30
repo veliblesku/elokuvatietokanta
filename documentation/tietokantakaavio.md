@@ -1,3 +1,4 @@
+```
 CREATE TABLE person (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -6,6 +7,8 @@ CREATE TABLE person (
 	birthday DATETIME, 
 	PRIMARY KEY (id)
 );
+```
+```
 CREATE TABLE account (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
@@ -15,6 +18,7 @@ CREATE TABLE account (
 	password VARCHAR(144) NOT NULL, 
 	PRIMARY KEY (id)
 );
+```
 CREATE TABLE movie (
 	id INTEGER NOT NULL, 
 	date_created DATETIME, 
