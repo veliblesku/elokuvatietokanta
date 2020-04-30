@@ -25,7 +25,6 @@ class Rating(Base):
         response = []
         for row in res:
             response.append(row[0])
-        print(response[0])
         return response[0]
 
     @staticmethod
@@ -37,9 +36,7 @@ class Rating(Base):
         response = []
         for row in res:
             response.append(row[0])
-        print("novoivittu")
-        print(response[0])
-        print("voimoro")
+
         return response[0]
     
     @staticmethod
@@ -56,9 +53,6 @@ class Rating(Base):
     def check_if_user_has_rated_movie(account_id, movie_id):
         stmt = text("SELECT Rating.id FROM rating WHERE account_id=:a_id AND movie_id=:m_id;").params(a_id=account_id, m_id=movie_id);
         res = db.engine.execute(stmt)
-        print("RES ON = = = = ")
-        print(res)
-        print("RESEIERWREASJFDS")
         response = []
         for row in res:
             response.append(row[0])

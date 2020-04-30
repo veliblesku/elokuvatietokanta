@@ -61,8 +61,6 @@ def movies_create():
 def movie_add_credits_index(movie_id):
     form = PersonsRoleInThisMovieForm(request.form)
     movie = Movie.query.get(movie_id)
-    print("moro movie on ")
-    print(movie)
     return render_template("movies/movieaddcredits.html", movie = movie, roles = Role.query.all(), persons = Person.query.all(), form = form)
 
 @app.route("/movies/<movie_id>/add_credits/", methods=["POST"])

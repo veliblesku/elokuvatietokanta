@@ -5,6 +5,9 @@
 <form method="POST" action="{{ url_for('persons_create') }}">
   {{ render_field(form.name) }}
   {{ render_field(form.dateOfBirth) }}
+    {% for error in form.name.errors %}
+	  <li>{{ error }}</li>
+	{% endfor %}
   <button type="submit" class="btn btn-primary">Add a Person</button>
 </form>
 {% endblock %}

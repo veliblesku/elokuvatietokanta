@@ -5,8 +5,7 @@ from application.persons.models import Person
 from application.roles.models import Role
 
 class RoleForm(FlaskForm):
-    rolename = StringField("Role in movie", [validators.Length(min=2)])
-
+    rolename = StringField("Role in movie", [validators.Length(min=2, max=40)])
     
     class Meta:
         csrf = False

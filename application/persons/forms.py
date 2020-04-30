@@ -5,7 +5,7 @@ from datetime import date
 from wtforms.ext.sqlalchemy.fields import QuerySelectField
 
 class PersonForm(FlaskForm):
-    name = StringField("Person Name", [validators.Length(min=2, max=100)])
+    name = StringField("Person Name", [validators.Length(min=2, max=40)])
     dateOfBirth = DateField("Date of Birth",default=date.today)
 
     class Meta:
