@@ -1,11 +1,18 @@
 # Elokuvatietokanta
 
-Tietokannasta löytyy tietoja elokuvista ja niiden tekijöistä. 
-Elokuvista voidaan nähdä tietoja mm. tekijöistä, budjetista, valmistumisesta, kuvauspaikoista, kesto, jne.
-Elokuvan tekijöistä, kuten ohjaajista, käsikirjoittajista jne. voidaan hakea tietoja koulutuksesta, iästä, produktioista joissa oltu mukana.
-Käyttäjät voivat tehdä arvosteluja elokuvista. Arvostelut näytetään elokuvissa. Tämän avulla voidaan elokuvat järjestää.
-Käyttäjät voivat hakea tietokannasta tietoja elokuvista tai elokuvien tekijöistä.
+* Tietokannasta löytyy tietoja elokuvista ja niiden tekijöistä. 
+* Elokuvista voidaan nähdä tietoja mm. tekijöistä, budjetista, valmistumisesta ja kesto.
+* Elokuvan tekijöistä, kuten ohjaajista, käsikirjoittajista jne. voidaan hakea tietoja iästä, produktioista joissa oltu mukana ja missä roolissa.
+* Käyttäjät voivat tehdä arvosteluja elokuvista. Arvostelut näytetään elokuvissa.
 
+### Jatkokehitykseen
+* Tiedot elokuvien kuvauspaikoista
+* Soundtracks
+* Käyttäjät voivat seurata muita käyttäjiä
+* Käyttäjät voivat kommentoida elokuvia arvostelun lisäksi
+
+### Jatkokehitykseen
+* 
 ## Herokun testiversio
 [Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion.  
 Rekisteröidy sovellukseen tai kirjaudu seuraavilla tunnuksilla:  
