@@ -21,7 +21,7 @@ def ratings_get_user_ratings():
 def movie_set_rating(movie_id):
     form = MovieRatingForm(request.form)
 
-    s = Rating.check_if_user_has_rated_movie(current_user.id,movie_id)
+    s = Rating.check_if_user_has_rated_movie(current_user.id, movie_id)
     if not s:
         print("empty")
         u = current_user.id
@@ -35,8 +35,5 @@ def movie_set_rating(movie_id):
         r.rating = form.rating.data
         db.session().commit()
     print(s)
-
-
-  
   
     return redirect(url_for("movies_get_movie", movie_id=movie_id))

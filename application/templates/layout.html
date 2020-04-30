@@ -12,7 +12,7 @@
 
   <body>
     <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4">
-    	<a class="navbar-brand" href="#">MOVIEDAB</a>
+    	<a class="navbar-brand" href="/"">MOVIEDAB</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
       </button>
@@ -25,9 +25,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownMovies">
               <a class="dropdown-item" href="{{ url_for('movies_index') }}">List movies</a>
-              <a class="dropdown-item" href="{{ url_for('movies_form') }}">Add Movie in Database</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              {%if current_user.is_authenticated%}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('movies_form') }}">Add Movie in Database</a>
+              {%endif%}
             </div>
           </li>
 
@@ -37,10 +38,10 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownPersons">
               <a class="dropdown-item" href="{{ url_for('persons_index') }}">List of moviemakers</a>
-              <div class="dropdown-divider"></div>
+              {%if current_user.is_authenticated%}
+                <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ url_for('persons_form') }}">Add movie maker</a>    
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              {%endif%}
             </div>
           </li>
           <li class="nav-item dropdown">
@@ -49,22 +50,22 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownRoles">
               <a class="dropdown-item" href="{{ url_for('roles_index') }}">List of roles in movie making</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="{{ url_for('roles_form') }}">Add role</a>    
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="#">Something else here</a>
+              {%if current_user.is_authenticated%}
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{{ url_for('roles_form') }}">Add role</a>    
+              {%endif%}
             </div>
           </li>
+          {%if current_user.is_authenticated%}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownCredits" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Credits in movies
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdownCredits">
-              <a class="dropdown-item" href="{{ url_for('add_credits') }}">List of credits in movies?</a>
-              <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="{{ url_for('add_credits') }}">Add credits</a>    
             </div>
           </li>
+          {%endif%}
           {%if current_user.is_authenticated%}
           <li>
              <a class="nav-link" href="{{ url_for('ratings_get_user_ratings') }}">My rated movies</a>
