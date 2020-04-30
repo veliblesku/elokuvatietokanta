@@ -25,7 +25,7 @@ class PersonsRoleInMovie(Base):
 
     @staticmethod
     def get_credits(movie_id):
-        stmt = text("SELECT rim.id, p.name, r.roleName FROM roles_in_movies rim JOIN person p ON rim.person_id = p.id JOIN role r ON rim.role_id=r.id  WHERE movie_id=:m_id;").params(m_id=movie_id);
+        stmt = text("SELECT rim.id, p.name, r.rolename FROM roles_in_movies rim JOIN person p ON rim.person_id = p.id JOIN role r ON rim.role_id=r.id  WHERE movie_id=:m_id;").params(m_id=movie_id);
         res = db.engine.execute(stmt)
         response = []
         for row in res:
