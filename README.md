@@ -11,8 +11,6 @@
 * Käyttäjät voivat seurata muita käyttäjiä
 * Käyttäjät voivat kommentoida elokuvia arvostelun lisäksi
 
-### Jatkokehitykseen
-* 
 ## Herokun testiversio
 [Täältä](https://tsoha-movierating-demo.herokuapp.com/) löydät sovelluksen testiversion.  
 Rekisteröidy sovellukseen tai kirjaudu seuraavilla tunnuksilla:  
