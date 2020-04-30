@@ -1,3 +1,5 @@
+![Kaavio](https://github.com/veliblesku/elokuvatietokanta/blob/master/documentation/img/TietokantakaavioFinal.png)
+
 # CREATE TABLE -lauseet
 ```
 CREATE TABLE person (
